@@ -57,6 +57,7 @@
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\ShowRecords.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\StartOptions.cs" />
+     <Compile Include="Assets\Cleverest\Scripts\RegisterEvent\Start.cs" />
      <Compile Include="Assets\Example Games\2D Scrolling Shooter\Scripts\Background.cs" />
      <Compile Include="Assets\Example Games\2D Scrolling Shooter\Scripts\Bullet.cs" />
      <Compile Include="Assets\Example Games\2D Scrolling Shooter\Scripts\DestroyArea.cs" />
