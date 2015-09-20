@@ -238,9 +238,6 @@
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>E:/Gir_project/Cleverest/Assets/Plug/SQLiter/DLLs/System.Data.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
  <HintPath>E:/Gir_project/Cleverest/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="System.Security">
