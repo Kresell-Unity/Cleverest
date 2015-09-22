@@ -7,26 +7,37 @@ using Mono.Data.Sqlite;
 
 public class Players
 {
-
-	public int Id{ get; set; }
 	public string Name_Player{ get; set;}
 	public float Score{ get; set; }
+
+	public Players(string Name_Player, float Score){
+		this.Name_Player = Name_Player;
+		this.Score = Score;
+	}
 }
 
 public class QA
 {
-	public int ID{ get; set; }
 	public string Theme{ get; set; }
 	public string Question{ get; set; }
 	public string Answer{ get; set; }
+
+	public QA(string Theme,string Question,string Answer){
+		this.Theme = Theme;
+		this.Question = Question;
+		this.Answer = Answer;
+	}
 }
 
 public class db_con : MonoBehaviour {
 	private string connectionString;
+	private List<Players> ListPlayers= new List<Players>();
 	// Use this for initialization
 	void Start () {
 		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
+		DeletePlayer ("Kern");
 		players ();
+		//InsertPlayers ("Kern", 10);
 	}
 	
 	// Update is called once per frame
@@ -34,7 +45,40 @@ public class db_con : MonoBehaviour {
 	
 	}
 
+	private void InsertPlayers(string name,int newScore){
+		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
+		{
+			dbConnection.Open();
+			
+			using(IDbCommand dbCmd=dbConnection.CreateCommand())
+			{
+				string sqlQuery=string.Format ("INSERT INTO Players(Name_Player,Score) VALUES(\'{0}\',\'{1}\')",name,newScore);
+				dbCmd.CommandText= sqlQuery;
+				dbCmd.ExecuteScalar();
+				dbConnection.Close ();
+			}
+			
+		}
+	}
+
+	private void DeletePlayer(string name){
+		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
+		{
+			dbConnection.Open();
+			
+			using(IDbCommand dbCmd=dbConnection.CreateCommand())
+			{
+				string sqlQuery=string.Format ("DELETE FROM Players WHERE Name_Player=\'{0}\'",name);
+				dbCmd.CommandText= sqlQuery;
+				dbCmd.ExecuteScalar();
+				dbConnection.Close ();
+			}
+			
+		}
+	}
+
 	private void players(){
+		ListPlayers.Clear ();
 		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
 		      {
 			dbConnection.Open();
@@ -46,8 +90,7 @@ public class db_con : MonoBehaviour {
 
 				using(IDataReader reader=dbCmd.ExecuteReader()){
 					while(reader.Read()){
-						Debug.Log(reader.GetString(0));
-						Debug.Log (reader.GetFloat(1));
+						ListPlayers.Add(new Players(reader.GetString(0),reader.GetInt32(1)));
 						//dbConnection.Close();
 						//reader.Close();
 					}
