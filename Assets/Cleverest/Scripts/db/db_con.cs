@@ -18,7 +18,14 @@ public class Players : IComparable<Players>
 	}
 	public int CompareTo (Players other)
 	{
-		throw new NotImplementedException ();
+		if (other.Score < this.Score) {
+			return -1;
+		}
+		else
+		if (other.Score > this.Score) {
+			return 1;
+		} 
+		return 0;
 	}
 }
 
@@ -109,6 +116,7 @@ public class db_con : MonoBehaviour {
 			}
 
 		}
+		ListPlayers.Sort ();
 		}
 
 	private void ShowPlayers(){
