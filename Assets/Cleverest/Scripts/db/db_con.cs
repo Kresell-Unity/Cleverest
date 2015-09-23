@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System;
 using System.Data;
 using Mono.Data.Sqlite;
+using System.Linq;
+using System.Text;
 
-public class Players
+public class Players : IComparable<Players>
 {
 	public string Name_Player{ get; set;}
 	public float Score{ get; set; }
@@ -13,6 +15,10 @@ public class Players
 	public Players(string Name_Player, float Score){
 		this.Name_Player = Name_Player;
 		this.Score = Score;
+	}
+	public int CompareTo (Players other)
+	{
+		throw new NotImplementedException ();
 	}
 }
 
