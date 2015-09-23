@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Cleverest\Scripts\db\db_con.cs">
     <Files>
-      <File FileName="Assets\Cleverest\Scripts\db\db_con.cs" Line="93" Column="76" />
+      <File FileName="Assets\Cleverest\Scripts\db\db_con.cs" Line="110" Column="44" />
+      <File FileName="Assets\Cleverest\Scripts\Menu_Event\HightScript.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
                 <Node name="db" expanded="True">
                   <Node name="db_con.cs" selected="True" />
                 </Node>
-                <Node name="RegisterEvent" expanded="True" />
+                <Node name="Menu_Event" expanded="True" />
               </Node>
             </Node>
           </Node>

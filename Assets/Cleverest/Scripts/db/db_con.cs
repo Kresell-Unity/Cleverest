@@ -32,12 +32,15 @@ public class QA
 public class db_con : MonoBehaviour {
 	private string connectionString;
 	private List<Players> ListPlayers= new List<Players>();
+	public GameObject playerPrefabs;
+	public Transform playerParent;
 	// Use this for initialization
 	void Start () {
 		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
-		DeletePlayer ("Kern");
-		players ();
-		//InsertPlayers ("Kern", 10);
+		//DeletePlayer ("Kern");
+		//players ();
+		//InsertPlayers ("Bogdan", 1100);
+		ShowPlayers ();
 	}
 	
 	// Update is called once per frame
@@ -90,16 +93,31 @@ public class db_con : MonoBehaviour {
 
 				using(IDataReader reader=dbCmd.ExecuteReader()){
 					while(reader.Read()){
-						ListPlayers.Add(new Players(reader.GetString(0),reader.GetInt32(1)));
+						ListPlayers.Add(new Players(reader.GetString(0),reader.GetFloat(1)));
+						Debug.Log(ListPlayers.ToString());
 						//dbConnection.Close();
 						//reader.Close();
 					}
 				}
 			
 			}
-			
+
 		}
 		}
+
+	private void ShowPlayers(){
+		players ();
+		for (int i=0; i<ListPlayers.Count; i++) {
+			GameObject tmpObje=Instantiate(playerPrefabs);
+
+			Players tmpPlayer= ListPlayers[i];
+
+			tmpObje.GetComponent<HightScript>().SetScore(tmpPlayer.Name_Player,tmpPlayer.Score.ToString());
+			tmpObje.transform.SetParent(playerParent);
+		
+		}
+
+	}
 		}
 
 

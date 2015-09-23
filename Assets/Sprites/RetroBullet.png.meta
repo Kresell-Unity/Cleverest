@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: fb16cc86978e6464d9ecc8802812674a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bullet_0
+    21300002: Bullet_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +37,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -49,6 +52,7 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -2
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites:
     - name: Bullet_0
