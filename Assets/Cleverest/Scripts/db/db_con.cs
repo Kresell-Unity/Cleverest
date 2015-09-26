@@ -6,6 +6,7 @@ using System.Data;
 using Mono.Data.Sqlite;
 using System.Linq;
 using System.Text;
+using UnityEngine.UI;
 
 public class Players : IComparable<Players>
 {
@@ -18,7 +19,14 @@ public class Players : IComparable<Players>
 	}
 	public int CompareTo (Players other)
 	{
-		throw new NotImplementedException ();
+		if (other.Score < this.Score) {
+			return -1;
+		}
+		else
+		if (other.Score > this.Score) {
+			return 1;
+		} 
+		return 0;
 	}
 }
 
@@ -28,6 +36,9 @@ public class QA
 	public string Question{ get; set; }
 	public string Answer{ get; set; }
 
+    public QA(string Theme) {
+        this.Theme = Theme;
+    }
 	public QA(string Theme,string Question,string Answer){
 		this.Theme = Theme;
 		this.Question = Question;
@@ -36,25 +47,68 @@ public class QA
 }
 
 public class db_con : MonoBehaviour {
+    public GameObject panel;
 	private string connectionString;
+
 	private List<Players> ListPlayers= new List<Players>();
-	public GameObject playerPrefabs;
+    public GameObject playerPrefabs;
 	public Transform playerParent;
-	// Use this for initialization
-	void Start () {
+    public GameObject namePlayer;
+    public InputField enterName;
+    public GameObject nameDialog;
+//----------------------------------------------------------------------------
+    private List<QA> ListThemes = new List<QA>();
+    public GameObject themePrefabs;
+    public GameObject nameTheme;
+    public Transform themeParent;
+    public InputField themeName;
+    public InputField []themeQuestion;
+    public InputField []themeAnswer;
+    public GameObject themeDialog;
+
+    // Use this for initialization
+    void Start () {
 		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
-		//DeletePlayer ("Kern");
-		//players ();
-		//InsertPlayers ("Bogdan", 1100);
-		ShowPlayers ();
+        ShowPlayers();
+        ShowThemes();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            nameDialog.SetActive(!nameDialog.activeSelf);
+        }
+        if (ThemeScript.edit) { Show_editTheme(); }
+        if (HightScript.check) {
+           // DeletePlayer(namePlayer.GetComponent<Text>().text);
+          // _______________________________________________________
+        }
+    }
+    public void ADDClick()
+    {
+            nameDialog.SetActive(!nameDialog.activeSelf);     
+    }
+    public void ADDClickTheme()
+    {
+        themeDialog.SetActive(!themeDialog.activeSelf);
+        themeName.text = string.Empty;
+        for (int i = 0; i < 10; i++)
+        {
+            themeQuestion[i].text = string.Empty;
+            themeAnswer[i].text = string.Empty;
+        }
+    }
+    public void BackClickTheme()
+    {
+       themeDialog.SetActive(false);
+        ThemeScript.edit = false;
 
-	private void InsertPlayers(string name,int newScore){
+    }
+    public void BackClick()
+    {
+        nameDialog.SetActive(false);
+    }
+    private void InsertPlayers(string name,int newScore){
 		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
 		{
 			dbConnection.Open();
@@ -64,13 +118,32 @@ public class db_con : MonoBehaviour {
 				string sqlQuery=string.Format ("INSERT INTO Players(Name_Player,Score) VALUES(\'{0}\',\'{1}\')",name,newScore);
 				dbCmd.CommandText= sqlQuery;
 				dbCmd.ExecuteScalar();
-				dbConnection.Close ();
+
 			}
 			
 		}
 	}
 
-	private void DeletePlayer(string name){
+    private void InsertThemes(string name, string question,string answer)
+    {
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString))
+        {
+            dbConnection.Open();
+
+            using (IDbCommand dbCmd = dbConnection.CreateCommand())
+            {
+
+                    string sqlQuery = string.Format("INSERT INTO QA(Theme,Question,Answer) VALUES(\'{0}\',\'{1}\',\'{2}\')", name, question, answer);
+                Debug.Log(name+" "+ question+" "+answer);
+                    dbCmd.CommandText = sqlQuery;
+                    dbCmd.ExecuteScalar();
+                
+            }
+
+        }
+    }
+
+    private void DeletePlayer(string name){
 		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
 		{
 			dbConnection.Open();
@@ -80,13 +153,13 @@ public class db_con : MonoBehaviour {
 				string sqlQuery=string.Format ("DELETE FROM Players WHERE Name_Player=\'{0}\'",name);
 				dbCmd.CommandText= sqlQuery;
 				dbCmd.ExecuteScalar();
-				dbConnection.Close ();
+
 			}
 			
 		}
 	}
 
-	private void players(){
+	public void players(){
 		ListPlayers.Clear ();
 		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
 		      {
@@ -100,19 +173,99 @@ public class db_con : MonoBehaviour {
 				using(IDataReader reader=dbCmd.ExecuteReader()){
 					while(reader.Read()){
 						ListPlayers.Add(new Players(reader.GetString(0),reader.GetFloat(1)));
-						Debug.Log(ListPlayers.ToString());
-						//dbConnection.Close();
-						//reader.Close();
+
+						
 					}
-				}
+                    reader.Close();
+                }
 			
 			}
 
 		}
+		ListPlayers.Sort ();
 		}
 
-	private void ShowPlayers(){
+    private void edittheme(string name)
+    {
+        ListThemes.Clear();
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString))
+        {
+            dbConnection.Open();
+
+            using (IDbCommand dbCmd = dbConnection.CreateCommand())
+            {
+                string sqlQuery = string.Format("SELECT * FROM QA WHERE THEME=\'{0}\'", name);
+                dbCmd.CommandText = sqlQuery;
+
+                using (IDataReader reader = dbCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ListThemes.Add(new QA(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
+
+
+                    }
+                    reader.Close();
+                }
+
+            }
+
+        }
+    }
+
+    public void Show_editTheme() {
+        Debug.Log(ThemeScript.name);
+            edittheme(ThemeScript.name);
+            Debug.Log(ListThemes.Count);
+            int i = 0;
+            foreach (QA qa in ListThemes)
+            {
+                themeName.text = qa.Theme;
+                themeQuestion[i].text = qa.Question;
+                themeAnswer[i].text = qa.Answer;
+                i++;
+            }
+            themeDialog.SetActive(true);
+            Debug.Log("ààâ³àâ");
+        
+    }
+
+    private void themes()
+    {
+        ListThemes.Clear();
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString))
+        {
+            dbConnection.Open();
+
+            using (IDbCommand dbCmd = dbConnection.CreateCommand())
+            {
+                string sqlQuery = "SELECT DISTINCT Theme FROM QA";
+                dbCmd.CommandText = sqlQuery;
+
+                using (IDataReader reader = dbCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ListThemes.Add(new QA(reader.GetString(0)));
+ 
+                        
+                    }
+                    reader.Close();
+                }
+
+            }
+
+        }
+       // ListPlayers.Sort();
+    }
+
+    public void ShowPlayers(){
 		players ();
+
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Content"))
+        {
+            Destroy(player);
+        }
 		for (int i=0; i<ListPlayers.Count; i++) {
 			GameObject tmpObje=Instantiate(playerPrefabs);
 
@@ -124,6 +277,69 @@ public class db_con : MonoBehaviour {
 		}
 
 	}
-		}
+
+    public void ShowThemes()
+    {
+        themes();
+
+        foreach (GameObject theme in GameObject.FindGameObjectsWithTag("Theme"))
+        {
+            Destroy(theme);
+        }
+        for (int i = 0; i < ListThemes.Count; i++)
+        {
+            GameObject tmpObje = Instantiate(themePrefabs);
+
+            QA tmpTheme = ListThemes[i];
+
+            tmpObje.GetComponent<ThemeScript>().SetTheme(tmpTheme.Theme);
+            tmpObje.transform.SetParent(themeParent);
+
+        }
+
+    }
+    public void EnterName() {
+        if (enterName.text != string.Empty)
+        {
+            int score = 0;
+            InsertPlayers(enterName.text, score);
+            nameDialog.SetActive(!nameDialog.activeSelf);
+            enterName.text = string.Empty;
+
+            ShowPlayers();
+        }
+    }
+    public void EnterTheme()
+    {
+        if (themeName.text != string.Empty)
+        {
+            
+            
+            InsertThemes(themeName.text, themeQuestion[0].text, themeAnswer[0].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[1].text, themeAnswer[1].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[2].text, themeAnswer[2].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[3].text, themeAnswer[3].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[4].text, themeAnswer[4].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[5].text, themeAnswer[5].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[6].text, themeAnswer[6].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[7].text, themeAnswer[7].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[8].text, themeAnswer[8].text);
+            Debug.Log("insert");
+            InsertThemes(themeName.text, themeQuestion[9].text, themeAnswer[9].text);
+            Debug.Log("insert");
+
+            themeDialog.SetActive(!themeDialog.activeSelf);
+            ShowThemes();
+        }
+    }
+}
 
 
