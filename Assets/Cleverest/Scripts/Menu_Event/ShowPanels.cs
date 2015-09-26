@@ -16,6 +16,7 @@ public class ShowPanels : MonoBehaviour {
 	{
 		optionsPanel.SetActive(true);
 		optionsTint.SetActive(true);
+        
 		img.SetActive (false);
 		can.SetActive (false);
 	}
