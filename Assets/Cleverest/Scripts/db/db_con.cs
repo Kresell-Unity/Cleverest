@@ -69,7 +69,7 @@ public class db_con : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
+		connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
         ShowPlayers();
         ShowThemes();
 	}

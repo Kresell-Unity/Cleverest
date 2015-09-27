@@ -2,11 +2,11 @@ Mono path[0] = 'E:/Gir_project/Cleverest/cleverest_Data/Managed'
 Mono path[1] = 'E:/Gir_project/Cleverest/cleverest_Data/Mono'
 Mono config path = 'E:/Gir_project/Cleverest/cleverest_Data/Mono/etc'
 PlayerConnection initialized from E:/Gir_project/Cleverest/cleverest_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55095
-Broadcasting "[IP] 169.254.123.104 [Port] 55095 [Flags] 3 [Guid] 3575128188 [EditorId] 156999809 [Version] 1048832 [Id] WindowsPlayer(HPPAVILION-PC) [Debug] 0" to [169.254.255.255:54997]...
-Waiting for connection from host on [169.254.123.104:55095]...
+PlayerConnection initialized network socket : 0.0.0.0 55493
+Broadcasting "[IP] 169.254.123.104 [Port] 55493 [Flags] 3 [Guid] 2979249249 [EditorId] 322717278 [Version] 1048832 [Id] WindowsPlayer(HPPAVILION-PC) [Debug] 0" to [169.254.255.255:54997]...
+Waiting for connection from host on [169.254.123.104:55493]...
 PlayerConnection accepted from [169.254.150.1] handle:0x258
-PlayerConnection already initialized - listening to [169.254.123.104:55095]
+PlayerConnection already initialized - listening to [169.254.123.104:55493]
 Initialize engine version: 5.2.1f1 (44735ea161b3)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -36,7 +36,7 @@ Loading E:\Gir_project\Cleverest\cleverest_Data\Managed\System.EnterpriseService
 Platform assembly: E:\Gir_project\Cleverest\cleverest_Data\Managed\System.Security.dll (this message is harmless)
 Loading E:\Gir_project\Cleverest\cleverest_Data\Managed\System.Security.dll into Unity Child Domain
 Platform assembly: E:\Gir_project\Cleverest\cleverest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.119 seconds
+- Completed reload, in  0.133 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -44,17 +44,18 @@ desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 Platform assembly: E:\Gir_project\Cleverest\cleverest_Data\Managed\System.dll (this message is harmless)
 Platform assembly: E:\Gir_project\Cleverest\cleverest_Data\Managed\System.Transactions.dll (this message is harmless)
 Platform assembly: E:\Gir_project\Cleverest\cleverest_Data\Managed\System.Xml.dll (this message is harmless)
-SqliteException: Unable to open the database file
-  at Mono.Data.Sqlite.SQLite3.Open (System.String strFilename, SQLiteOpenFlagsEnum flags, Int32 maxPoolSize, Boolean usePool) [0x00000] in <filename unknown>:0 
-  at Mono.Data.Sqlite.SqliteConnection.Open () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: aec -> priority: 1 
-SqliteException: Unable to open the database file
-  at Mono.Data.Sqlite.SQLite3.Open (System.String strFilename, SQLiteOpenFlagsEnum flags, Int32 maxPoolSize, Boolean usePool) [0x00000] in <filename unknown>:0 
-  at Mono.Data.Sqlite.SqliteConnection.Open () [0x00000] in <filename unknown>:0 
+  Thread -> id: 24a4 -> priority: 1 
+NullReferenceException: Object reference not set to an instance of an object
+  at ShowPanels.ShowOptionsPanel () [0x00018] in E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs:20 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00010] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00046] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00006] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54 
+  at UnityEngine.UI.Button.Press () [0x00017] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x0000c] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x0006f] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269 
 UnityEngine.Debug:Internal_LogException(Exception, Object)
 UnityEngine.Debug:LogException(Exception)
 UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:273)
@@ -64,6 +65,780 @@ UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\builds
 UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
 UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
  
-(Filename:  Line: -1)
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/ShowPanels.cs Line: 20)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShowPanels.HideOptionsPanel () [0x00018] in E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs:29 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00010] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00046] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00006] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54 
+  at UnityEngine.UI.Button.Press () [0x00017] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x0000c] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x0006f] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269 
+UnityEngine.Debug:Internal_LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:273)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/ShowPanels.cs Line: 29)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShowPanels.ShowOptionsPanel () [0x00018] in E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs:20 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00010] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00046] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00006] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54 
+  at UnityEngine.UI.Button.Press () [0x00017] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x0000c] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x0006f] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269 
+UnityEngine.Debug:Internal_LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:273)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/ShowPanels.cs Line: 20)
+
+fgf
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+HightScript:CLickChek() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\HightScript.cs:22)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/HightScript.cs Line: 22)
+
+True
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+HightScript:CLickChek() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\HightScript.cs:23)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/HightScript.cs Line: 23)
+
+dgfdfd
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+HightScript:CLickChek() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\HightScript.cs:22)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/HightScript.cs Line: 22)
+
+True
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+HightScript:CLickChek() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\HightScript.cs:23)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/HightScript.cs Line: 23)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShowPanels.HideOptionsPanel () [0x00018] in E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs:29 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00010] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00046] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00006] in C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54 
+  at UnityEngine.UI.Button.Press () [0x00017] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x0000c] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x0006f] in C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269 
+UnityEngine.Debug:Internal_LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:273)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/ShowPanels.cs Line: 29)
+
+Game started in same scene! Put your game starting stuff here.
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+StartOptions:StartGameInScene() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\StartOptions.cs:96)
+StartOptions:StartButtonClicked() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Menu_Event\StartOptions.cs:60)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:149)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:626)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:766)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:54)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:35)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\UI\Core\Button.cs:44)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:378)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32) (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:277)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:265)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\InputModules\StandaloneInputModule.cs:179)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\UnityEngine.UI\EventSystem\EventSystem.cs:277)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Menu_Event/StartOptions.cs Line: 96)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.967837 ms
+System memory in use before: 97.7 MB.
+System memory in use after: 97.5 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 428.
+Total: 0.857760 ms (FindLiveObjects: 0.087518 ms CreateObjectMapping: 0.027146 ms MarkObjects: 0.475273 ms  DeleteObjects: 0.261339 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.670546 ms
+System memory in use before: 59.8 MB.
+System memory in use after: 58.4 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 693.
+Total: 1.068047 ms (FindLiveObjects: 0.095216 ms CreateObjectMapping: 0.039707 ms MarkObjects: 0.899899 ms  DeleteObjects: 0.026336 ms)
+
+27
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+14
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+17
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+31
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+3
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+19
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+14
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+31
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+5
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+26
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+5
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+34
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:31)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+9
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+12
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+10
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+11
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+11
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+28
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+25
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+32
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+11
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+23
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+34
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:32)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+6
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+9
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+33
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+30
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+10
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+13
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+0
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+31
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+10
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+24
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+29
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+22
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+17
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+29
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+6
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+20
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+33
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+17
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+12
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+13
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+10
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+21
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+22
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+33
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+24
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+25
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+23
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+26
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+11
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+1
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+27
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+34
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
+
+8
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+Random_Script:Color(Int32, Int32) (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:22)
+Random_Script:Randomize() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:33)
+Random_Script:Start() (at E:\Gir_project\Cleverest\Assets\Cleverest\Scripts\Random_Script.cs:50)
+ 
+(Filename: E:/Gir_project/Cleverest/Assets/Cleverest/Scripts/Random_Script.cs Line: 22)
 
 Waiting for finish
