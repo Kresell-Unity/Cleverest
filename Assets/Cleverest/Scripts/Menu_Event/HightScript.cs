@@ -7,6 +7,7 @@ public class HightScript : MonoBehaviour {
 	public GameObject score;
 	public GameObject playerName;
     public static bool check;
+    public static string name;
 
     void Start() { check = false; }
 
@@ -17,6 +18,9 @@ public class HightScript : MonoBehaviour {
 
     public void CLickChek() {
         check = true;
+        name = playerName.GetComponent<Text>().text;
+        Debug.Log(name);
+        Debug.Log(check);
 
     }
 }

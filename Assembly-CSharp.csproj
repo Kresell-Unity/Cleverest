@@ -58,6 +58,7 @@
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\ShowPanels.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\ShowRecords.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\StartOptions.cs" />
+     <Compile Include="Assets\Cleverest\Scripts\Random_Script.cs" />
      <Compile Include="Assets\Cleverest\Scripts\RegisterEvent\Start.cs" />
      <Compile Include="Assets\Cleverest\Scripts\ThemeScript.cs" />
      <Compile Include="Assets\Cleverest\Scripts\db\db_con.cs" />
