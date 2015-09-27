@@ -65,6 +65,7 @@ public class db_con : MonoBehaviour {
     public InputField []themeQuestion;
     public InputField []themeAnswer;
     public GameObject themeDialog;
+    public GameObject DeletePlayerPanel;
 
     // Use this for initialization
     void Start () {
@@ -80,9 +81,19 @@ public class db_con : MonoBehaviour {
         }
         if (ThemeScript.edit) { Show_editTheme(); }
         if (HightScript.check) {
-           // DeletePlayer(namePlayer.GetComponent<Text>().text);
-          // _______________________________________________________
+            namePlayer.GetComponent<Text>().text = "Delete " + HightScript.name + "?";
+            DeletePlayerPanel.SetActive(true);
         }
+        else { DeletePlayerPanel.SetActive(false); }
+    }
+    public void ClickOKDletePlayer() {
+        DeletePlayer(HightScript.name);
+        DeletePlayerPanel.SetActive(false);
+        ShowPlayers();
+    }
+    public void BackDeletePlayer() {
+        DeletePlayerPanel.SetActive(false);
+        HightScript.check = false;
     }
     public void ADDClick()
     {
@@ -108,6 +119,7 @@ public class db_con : MonoBehaviour {
     {
         nameDialog.SetActive(false);
     }
+
     private void InsertPlayers(string name,int newScore){
 		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
 		{
