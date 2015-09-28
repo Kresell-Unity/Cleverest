@@ -45,6 +45,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Cleverest\Scripts\BackSceneRegister.cs" />
+     <Compile Include="Assets\Cleverest\Scripts\ListView.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\Back.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\DontDestroy.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\EventSystemChecker.cs" />
@@ -60,6 +62,7 @@
      <Compile Include="Assets\Cleverest\Scripts\Menu_Event\StartOptions.cs" />
      <Compile Include="Assets\Cleverest\Scripts\Random_Script.cs" />
      <Compile Include="Assets\Cleverest\Scripts\RegisterEvent\Start.cs" />
+     <Compile Include="Assets\Cleverest\Scripts\SelectPlayers.cs" />
      <Compile Include="Assets\Cleverest\Scripts\ThemeScript.cs" />
      <Compile Include="Assets\Cleverest\Scripts\db\db_con.cs" />
      <Compile Include="Assets\Cleverest\Scripts\debugger.cs" />

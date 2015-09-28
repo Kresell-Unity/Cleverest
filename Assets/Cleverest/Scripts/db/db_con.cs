@@ -30,16 +30,16 @@ public class Players : IComparable<Players>
 	}
 }
 
-public class QA
+public class Themess
 {
 	public string Theme{ get; set; }
 	public string Question{ get; set; }
 	public string Answer{ get; set; }
 
-    public QA(string Theme) {
+    public Themess(string Theme) {
         this.Theme = Theme;
     }
-	public QA(string Theme,string Question,string Answer){
+	public Themess(string Theme,string Question,string Answer){
 		this.Theme = Theme;
 		this.Question = Question;
 		this.Answer = Answer;
@@ -57,7 +57,7 @@ public class db_con : MonoBehaviour {
     public InputField enterName;
     public GameObject nameDialog;
 //----------------------------------------------------------------------------
-    private List<QA> ListThemes = new List<QA>();
+    private List<Themess> ListThemes = new List<Themess>();
     public GameObject themePrefabs;
     public GameObject nameTheme;
     public Transform themeParent;
@@ -213,7 +213,7 @@ public class db_con : MonoBehaviour {
                 {
                     while (reader.Read())
                     {
-                        ListThemes.Add(new QA(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
+                        ListThemes.Add(new Themess(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
 
 
                     }
@@ -230,7 +230,7 @@ public class db_con : MonoBehaviour {
             edittheme(ThemeScript.name);
             Debug.Log(ListThemes.Count);
             int i = 0;
-            foreach (QA qa in ListThemes)
+            foreach (Themess qa in ListThemes)
             {
                 themeName.text = qa.Theme;
                 themeQuestion[i].text = qa.Question;
@@ -258,7 +258,7 @@ public class db_con : MonoBehaviour {
                 {
                     while (reader.Read())
                     {
-                        ListThemes.Add(new QA(reader.GetString(0)));
+                        ListThemes.Add(new Themess(reader.GetString(0)));
  
                         
                     }
@@ -302,7 +302,7 @@ public class db_con : MonoBehaviour {
         {
             GameObject tmpObje = Instantiate(themePrefabs);
 
-            QA tmpTheme = ListThemes[i];
+            Themess tmpTheme = ListThemes[i];
 
             tmpObje.GetComponent<ThemeScript>().SetTheme(tmpTheme.Theme);
             tmpObje.transform.SetParent(themeParent);

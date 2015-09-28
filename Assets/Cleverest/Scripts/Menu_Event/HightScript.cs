@@ -21,6 +21,5 @@ public class HightScript : MonoBehaviour {
         name = playerName.GetComponent<Text>().text;
         Debug.Log(name);
         Debug.Log(check);
-
     }
 }
