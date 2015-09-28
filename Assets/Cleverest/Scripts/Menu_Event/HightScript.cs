@@ -19,7 +19,5 @@ public class HightScript : MonoBehaviour {
     public void CLickChek() {
         check = true;
         name = playerName.GetComponent<Text>().text;
-        Debug.Log(name);
-        Debug.Log(check);
     }
 }

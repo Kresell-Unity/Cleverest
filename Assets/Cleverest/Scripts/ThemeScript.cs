@@ -21,7 +21,5 @@ public class ThemeScript : MonoBehaviour
     public void ClickEdit() {
         edit = !edit;
         name = themeName.GetComponent<Text>().text;
-        Debug.Log(name);
-        Debug.Log(edit);
     }
 }

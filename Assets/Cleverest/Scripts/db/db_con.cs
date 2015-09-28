@@ -30,16 +30,16 @@ public class Players : IComparable<Players>
 	}
 }
 
-public class Themess
+public class Themes
 {
 	public string Theme{ get; set; }
 	public string Question{ get; set; }
 	public string Answer{ get; set; }
 
-    public Themess(string Theme) {
+    public Themes(string Theme) {
         this.Theme = Theme;
     }
-	public Themess(string Theme,string Question,string Answer){
+	public Themes(string Theme,string Question,string Answer){
 		this.Theme = Theme;
 		this.Question = Question;
 		this.Answer = Answer;
@@ -57,7 +57,7 @@ public class db_con : MonoBehaviour {
     public InputField enterName;
     public GameObject nameDialog;
 //----------------------------------------------------------------------------
-    private List<Themess> ListThemes = new List<Themess>();
+    private List<Themes> ListThemes = new List<Themes>();
     public GameObject themePrefabs;
     public GameObject nameTheme;
     public Transform themeParent;
@@ -146,7 +146,6 @@ public class db_con : MonoBehaviour {
             {
 
                     string sqlQuery = string.Format("INSERT INTO QA(Theme,Question,Answer) VALUES(\'{0}\',\'{1}\',\'{2}\')", name, question, answer);
-                Debug.Log(name+" "+ question+" "+answer);
                     dbCmd.CommandText = sqlQuery;
                     dbCmd.ExecuteScalar();
                 
@@ -213,7 +212,7 @@ public class db_con : MonoBehaviour {
                 {
                     while (reader.Read())
                     {
-                        ListThemes.Add(new Themess(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
+                        ListThemes.Add(new Themes(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
 
 
                     }
@@ -226,11 +225,9 @@ public class db_con : MonoBehaviour {
     }
 
     public void Show_editTheme() {
-        Debug.Log(ThemeScript.name);
             edittheme(ThemeScript.name);
-            Debug.Log(ListThemes.Count);
             int i = 0;
-            foreach (Themess qa in ListThemes)
+            foreach (Themes qa in ListThemes)
             {
                 themeName.text = qa.Theme;
                 themeQuestion[i].text = qa.Question;
@@ -238,8 +235,6 @@ public class db_con : MonoBehaviour {
                 i++;
             }
             themeDialog.SetActive(true);
-            Debug.Log("‡‡‚≥‡‚");
-        
     }
 
     private void themes()
@@ -258,7 +253,7 @@ public class db_con : MonoBehaviour {
                 {
                     while (reader.Read())
                     {
-                        ListThemes.Add(new Themess(reader.GetString(0)));
+                        ListThemes.Add(new Themes(reader.GetString(0)));
  
                         
                     }
@@ -302,7 +297,7 @@ public class db_con : MonoBehaviour {
         {
             GameObject tmpObje = Instantiate(themePrefabs);
 
-            Themess tmpTheme = ListThemes[i];
+            Themes tmpTheme = ListThemes[i];
 
             tmpObje.GetComponent<ThemeScript>().SetTheme(tmpTheme.Theme);
             tmpObje.transform.SetParent(themeParent);
@@ -328,25 +323,15 @@ public class db_con : MonoBehaviour {
             
             
             InsertThemes(themeName.text, themeQuestion[0].text, themeAnswer[0].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[1].text, themeAnswer[1].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[2].text, themeAnswer[2].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[3].text, themeAnswer[3].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[4].text, themeAnswer[4].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[5].text, themeAnswer[5].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[6].text, themeAnswer[6].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[7].text, themeAnswer[7].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[8].text, themeAnswer[8].text);
-            Debug.Log("insert");
             InsertThemes(themeName.text, themeQuestion[9].text, themeAnswer[9].text);
-            Debug.Log("insert");
 
             themeDialog.SetActive(!themeDialog.activeSelf);
             ShowThemes();

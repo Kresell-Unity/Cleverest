@@ -56,9 +56,6 @@ public class ListView : MonoBehaviour
     }
    public void ClickPlayer1()
     {
-        Debug.Log(PleyersGame[0]);
-        Debug.Log(PleyersGame[1]);
-        Debug.Log(PleyersGame[2]);
         param = 0;
         panel.SetActive(!panel.activeSelf);
     }
@@ -73,7 +70,12 @@ public class ListView : MonoBehaviour
         panel.SetActive(!panel.activeSelf);
     }
 
+    public void BackClickPlayers()
+    {
+        panel.SetActive(!panel.activeSelf);
+        HightScript.check = false;
 
+    }
 
 
     void Update() {
@@ -87,7 +89,6 @@ public class ListView : MonoBehaviour
 
     public void ClickOK() {
         PleyersGame[param] = HightScript.name;
-        Debug.Log(PleyersGame[param]);
         Userslabel[param].GetComponent<Text>().text = PleyersGame[param];
         HightScript.check = false;
         panel.SetActive(!panel.activeSelf);
