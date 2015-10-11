@@ -6,6 +6,7 @@ public class Random_Script : MonoBehaviour
 {
 
     public GameObject[] mas = new GameObject[36];
+	public int[] mas2 = new int[36];
     public Sprite[] button_skins = new Sprite[5];
 
     void Color(int count, int color)
@@ -40,10 +41,44 @@ public class Random_Script : MonoBehaviour
             }
         }
 
+		for (int i = 0; i < 36; i++) {
+			/*switch (mas [i].GetComponent<Image> ().sprite) {
+			case button_skins[0]:
+				mas2 [i] = 0;
+				break;
+			case button_skins[1]:
+				mas2 [i] = 1;
+				break;
+			case button_skins[2]:
+				mas2 [i] = 2;
+				break;
+			case button_skins[3]:
+				mas2 [i] = 3;
+				break;
+			}*/
 
-        //mas [0].GetComponent<Image> ().sprite = button_skins [UnityEngine.Random.Range (0, 3) ];
+
+			if (mas [i].GetComponent<Image> ().sprite == button_skins[0])
+				mas2 [i] = 0;
+			if (mas [i].GetComponent<Image> ().sprite == button_skins[1])
+				mas2 [i] = 1;
+			if (mas [i].GetComponent<Image> ().sprite == button_skins[2])
+				mas2 [i] = 2;
+			if (mas [i].GetComponent<Image> ().sprite == button_skins[3])
+				mas2 [i] = 3;
+		}
+
+		for (int i = 0; i < 36; i++)
+		{
+			mas[i].GetComponent<Image>().sprite = button_skins[4];
+		}
 
     }
+
+	void PushTable()
+	{
+
+	}
 
     void Start()
     {

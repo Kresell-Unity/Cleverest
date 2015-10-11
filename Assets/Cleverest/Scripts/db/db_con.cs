@@ -66,10 +66,12 @@ public class db_con : MonoBehaviour {
     public InputField []themeAnswer;
     public GameObject themeDialog;
     public GameObject DeletePlayerPanel;
+	public GameObject themaDelete;
 
     // Use this for initialization
     void Start () {
-		connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
+		//connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
+		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
         ShowPlayers();
         ShowThemes();
 	}
@@ -79,12 +81,18 @@ public class db_con : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             nameDialog.SetActive(!nameDialog.activeSelf);
         }
-        if (ThemeScript.edit) { Show_editTheme(); }
+		if (ThemeScript.edit) {
+			Show_editTheme ();
+			themaDelete.SetActive (true);
+		} else {
+			themaDelete.SetActive(false);
+		}
         if (HightScript.check) {
             namePlayer.GetComponent<Text>().text = "Delete " + HightScript.name + "?";
             DeletePlayerPanel.SetActive(true);
         }
         else { DeletePlayerPanel.SetActive(false); }
+
     }
     public void ClickOKDletePlayer() {
         DeletePlayer(HightScript.name);
@@ -169,6 +177,34 @@ public class db_con : MonoBehaviour {
 			
 		}
 	}
+	private void DeleteThema(string name){
+		using(IDbConnection dbConnection=new SqliteConnection(connectionString))
+		{
+			dbConnection.Open();
+			
+			using(IDbCommand dbCmd=dbConnection.CreateCommand())
+			{
+				string sqlQuery=string.Format ("DELETE FROM QA WHERE Theme=\'{0}\'",name);
+				dbCmd.CommandText= sqlQuery;
+				dbCmd.ExecuteScalar();
+				
+			}
+			
+		}
+	}
+
+
+	public void ClickDeleteThema () {
+		DeleteThema (themeName.text);
+		themeDialog.SetActive(false);
+		ThemeScript.edit = false;
+		ShowThemes ();
+	
+
+		Debug.Log (themeName.text);
+	}
+
+
 
 	public void players(){
 		ListPlayers.Clear ();
@@ -323,6 +359,7 @@ public class db_con : MonoBehaviour {
             
             
             InsertThemes(themeName.text, themeQuestion[0].text, themeAnswer[0].text);
+			Debug.Log("InsertThemes");
             InsertThemes(themeName.text, themeQuestion[1].text, themeAnswer[1].text);
             InsertThemes(themeName.text, themeQuestion[2].text, themeAnswer[2].text);
             InsertThemes(themeName.text, themeQuestion[3].text, themeAnswer[3].text);
