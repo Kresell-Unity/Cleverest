@@ -1,6 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Data;
+using Mono.Data.Sqlite;
+
+public class QSA
+{
+    public string Theme { get; set; }
+    public string Question { get; set; }
+    public string Answer { get; set; }
+    public QSA(string Theme)
+    {
+        this.Theme = Theme;
+    }
+
+    public QSA(string Theme, string Question, string Answer)
+    {
+        this.Theme = Theme;
+        this.Question = Question;
+        this.Answer = Answer;
+    }
+}
+
 
 public class Random_Script : MonoBehaviour
 {
@@ -8,6 +30,42 @@ public class Random_Script : MonoBehaviour
     public GameObject[] mas = new GameObject[36];
 	public int[] mas2 = new int[36];
     public Sprite[] button_skins = new Sprite[5];
+    private string connectionString;
+    private List<QSA> ListThemes = new List<QSA>();
+    private List<QSA> ListTheme1 = new List<QSA>();
+    private List<QSA> ListTheme2 = new List<QSA>();
+    private List<QSA> ListTheme3 = new List<QSA>();
+
+    void Start()
+    {
+        // connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
+        connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
+         Randomize();
+        Debug.Log("Попістафалі");
+        Debug.Log(ListTheme.ThemesGame[0]);
+        Debug.Log(ListTheme.ThemesGame[1]);
+        Debug.Log(ListTheme.ThemesGame[2]);
+
+        SelectTheme(ListTheme.ThemesGame[0]);
+        ListTheme1 = ListThemes;
+        foreach (QSA q in ListTheme1) {
+            Debug.Log(q.Answer +"--"+ q.Question);
+        }
+        SelectTheme(ListTheme.ThemesGame[1]);
+        ListTheme2 = ListThemes;
+        foreach (QSA q in ListTheme2)
+        {
+            Debug.Log(q.Answer + "---" + q.Question);
+        }
+        SelectTheme(ListTheme.ThemesGame[2]);
+        ListTheme3 = ListThemes;
+        foreach (QSA q in ListTheme3)
+        {
+            Debug.Log(q.Answer + "----" + q.Question);
+        }
+
+
+    }
 
     void Color(int count, int color)
     {
@@ -42,22 +100,6 @@ public class Random_Script : MonoBehaviour
         }
 
 		for (int i = 0; i < 36; i++) {
-			/*switch (mas [i].GetComponent<Image> ().sprite) {
-			case button_skins[0]:
-				mas2 [i] = 0;
-				break;
-			case button_skins[1]:
-				mas2 [i] = 1;
-				break;
-			case button_skins[2]:
-				mas2 [i] = 2;
-				break;
-			case button_skins[3]:
-				mas2 [i] = 3;
-				break;
-			}*/
-
-
 			if (mas [i].GetComponent<Image> ().sprite == button_skins[0])
 				mas2 [i] = 0;
 			if (mas [i].GetComponent<Image> ().sprite == button_skins[1])
@@ -67,12 +109,6 @@ public class Random_Script : MonoBehaviour
 			if (mas [i].GetComponent<Image> ().sprite == button_skins[3])
 				mas2 [i] = 3;
 		}
-
-		for (int i = 0; i < 36; i++)
-		{
-			mas[i].GetComponent<Image>().sprite = button_skins[4];
-		}
-
     }
 
 	void PushTable()
@@ -80,15 +116,41 @@ public class Random_Script : MonoBehaviour
 
 	}
 
-    void Start()
+    private void SelectTheme(string name)
     {
-        Randomize();
+        ListThemes.Clear();
+        using (IDbConnection dbConnection = new SqliteConnection(connectionString))
+        {
+            dbConnection.Open();
 
+            using (IDbCommand dbCmd = dbConnection.CreateCommand())
+            {
+                string sqlQuery = string.Format("SELECT * FROM QA WHERE THEME=\'{0}\'", name);
+                dbCmd.CommandText = sqlQuery;
+
+                using (IDataReader reader = dbCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ListThemes.Add(new QSA(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
+
+                    }
+                    reader.Close();
+                }
+
+            }
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (StartsGame.st) {
+            for (int i = 0; i < 36; i++)
+            {
+                mas[i].GetComponent<Image>().sprite = button_skins[4];
+            }
+        }
     }
 }
