@@ -67,6 +67,12 @@ public class Random_Script : MonoBehaviour
 
     }
 
+    public void BtClick() {
+       // mas[ this.gameObject.GetComponent<Text>().text]
+
+
+    }
+
     void Color(int count, int color)
     {
         while (count < 10)
@@ -76,9 +82,7 @@ public class Random_Script : MonoBehaviour
             {
                 mas[a].GetComponent<Image>().sprite = button_skins[color];
                 count++;
-
             }
-            Debug.Log(a);
         }
     }
 

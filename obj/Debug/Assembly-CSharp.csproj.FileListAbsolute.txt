@@ -36,8 +36,6 @@ E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\System.EnterpriseServices.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\System.Security.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEditor.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
-E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.dll
-E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Networking.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.UI.dll
@@ -50,10 +48,9 @@ E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\Mono.Cecil.Pdb.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\Mono.Cecil.Mdb.dll
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.xml
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEditor.xml
-E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.xml
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.UI.xml
 E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Networking.xml
-E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.xml
 E:\Gir_project\Тест\Cleverest\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 E:\Gir_project\Тест\Cleverest\obj\Debug\Assembly-CSharp.dll
 E:\Gir_project\Тест\Cleverest\obj\Debug\Assembly-CSharp.pdb
+E:\Gir_project\Тест\Cleverest\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
