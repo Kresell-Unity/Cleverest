@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Data;
 using Mono.Data.Sqlite;
+using System;
 
 public class QSA
 {
@@ -42,35 +43,13 @@ public class Random_Script : MonoBehaviour
         connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
          Randomize();
         Debug.Log("Попістафалі");
-        Debug.Log(ListTheme.ThemesGame[0]);
-        Debug.Log(ListTheme.ThemesGame[1]);
-        Debug.Log(ListTheme.ThemesGame[2]);
 
         SelectTheme(ListTheme.ThemesGame[0]);
         ListTheme1 = ListThemes;
-        foreach (QSA q in ListTheme1) {
-            Debug.Log(q.Answer +"--"+ q.Question);
-        }
         SelectTheme(ListTheme.ThemesGame[1]);
         ListTheme2 = ListThemes;
-        foreach (QSA q in ListTheme2)
-        {
-            Debug.Log(q.Answer + "---" + q.Question);
-        }
         SelectTheme(ListTheme.ThemesGame[2]);
         ListTheme3 = ListThemes;
-        foreach (QSA q in ListTheme3)
-        {
-            Debug.Log(q.Answer + "----" + q.Question);
-        }
-
-
-    }
-
-    public void BtClick() {
-       // mas[ this.gameObject.GetComponent<Text>().text]
-
-
     }
 
     void Color(int count, int color)
@@ -155,6 +134,30 @@ public class Random_Script : MonoBehaviour
             {
                 mas[i].GetComponent<Image>().sprite = button_skins[4];
             }
+            StartsGame.st = false;
+            Debug.Log(StartsGame.st);
         }
+
+    }
+
+    public void ClickBtQA(Text f)
+    {
+        Debug.Log(f.GetComponent<Text>().text);
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] ==0) {
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[0];
+        }
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 1)
+        {
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[1];
+        }
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 2)
+        {
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[2];
+        }
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 3)
+        {
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[3];
+        }
+        
     }
 }
