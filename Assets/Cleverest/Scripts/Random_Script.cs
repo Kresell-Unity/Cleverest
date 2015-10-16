@@ -143,20 +143,20 @@ public class Random_Script : MonoBehaviour
     public void ClickBtQA(Text f)
     {
         Debug.Log(f.GetComponent<Text>().text);
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] ==0) {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[0];
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] ==0) {
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[0];
         }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 1)
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 1)
         {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[1];
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[1];
         }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 2)
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 2)
         {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[2];
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[2];
         }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)] == 3)
+        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 3)
         {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)].GetComponent<Image>().sprite = button_skins[3];
+            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[3];
         }
         
     }
