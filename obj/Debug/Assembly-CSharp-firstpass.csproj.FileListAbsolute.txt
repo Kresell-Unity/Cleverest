@@ -81,4 +81,3 @@ E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.dll
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.dll
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.xml
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.xml
-E:\Gir_project\Ntcn2\Cleverest\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache

@@ -36,6 +36,14 @@ public class Random_Script : MonoBehaviour
     private List<QSA> ListTheme1 = new List<QSA>();
     private List<QSA> ListTheme2 = new List<QSA>();
     private List<QSA> ListTheme3 = new List<QSA>();
+    public GameObject panelQA;
+
+    //______________________________________________________
+    //------------------------------------------------------
+    //______________________________________________________
+
+    private string[][] Question = new string[3][];
+    private string[][] Answer = new string[3][];
 
     void Start()
     {
@@ -50,6 +58,9 @@ public class Random_Script : MonoBehaviour
         ListTheme2 = ListThemes;
         SelectTheme(ListTheme.ThemesGame[2]);
         ListTheme3 = ListThemes;
+        foreach (QSA d in ListTheme1) {
+
+        }
     }
 
     void Color(int count, int color)
@@ -140,24 +151,52 @@ public class Random_Script : MonoBehaviour
 
     }
 
+    IEnumerator countpred(int time)
+    {
+        while (time > -2)
+        {
+
+            yield return new WaitForSeconds(1);
+
+            time -= 1;
+            Debug.Log(time);
+            if (time < 0) {
+                panelQA.SetActive(true);
+
+            }
+        }
+
+    }
+
+    public void BtNO() {
+        panelQA.SetActive(false);
+    }
+
+    public void BtYES()
+    {
+        panelQA.SetActive(false);
+    }
+
     public void ClickBtQA(Text f)
     {
         Debug.Log(f.GetComponent<Text>().text);
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] ==0) {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[0];
+        if (mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite == button_skins[4]) {
+            if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 0) {
+                mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[0];
+            }
+            if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 1)
+            {
+                mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[1];
+            }
+            if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 2)
+            {
+                mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[2];
+            }
+            if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 3)
+            {
+                mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[3];
+            }
+            StartCoroutine(countpred(1));
         }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 1)
-        {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[1];
-        }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 2)
-        {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[2];
-        }
-        if (mas2[Convert.ToInt32(f.GetComponent<Text>().text)-1] == 3)
-        {
-            mas[Convert.ToInt32(f.GetComponent<Text>().text)-1].GetComponent<Image>().sprite = button_skins[3];
-        }
-        
     }
 }

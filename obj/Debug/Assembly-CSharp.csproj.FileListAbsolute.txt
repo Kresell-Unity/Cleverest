@@ -83,6 +83,5 @@ E:\Gir_project\Ntcn2\Cleverest\obj\Debug\Assembly-CSharp.dll
 E:\Gir_project\Ntcn2\Cleverest\obj\Debug\Assembly-CSharp.pdb
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.dll
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.dll
-E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Advertisements.xml
 E:\Gir_project\Ntcn2\Cleverest\Temp\bin\Debug\UnityEngine.Analytics.xml
