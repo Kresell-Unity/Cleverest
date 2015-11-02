@@ -16,9 +16,11 @@ public class StartsGame : MonoBehaviour
     public int time;
     public GUIText timer;
     public static bool st = false;
+    public GameObject BTPAUSE;
 
     void Start()
     {
+        BTPAUSE.SetActive(false);
         StartCoroutine(countdown());
     }
 
@@ -31,7 +33,7 @@ public class StartsGame : MonoBehaviour
             timer.text = time.ToString();
 
             time -= 1;
-            if (time < 0) { timer.text = "Start"; }
+            if (time < 0) { timer.text = "Start"; BTPAUSE.SetActive(true); }
         }
 
         st = true;

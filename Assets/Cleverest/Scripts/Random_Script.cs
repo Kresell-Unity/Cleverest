@@ -37,30 +37,33 @@ public class Random_Script : MonoBehaviour
     private List<QSA> ListTheme2 = new List<QSA>();
     private List<QSA> ListTheme3 = new List<QSA>();
     public GameObject panelQA;
+    public Text panelQAtext;
+    public Text textViewAnswer;
+    public int numberBT;
 
     //______________________________________________________
     //------------------------------------------------------
     //______________________________________________________
 
-    private string[][] Question = new string[3][];
-    private string[][] Answer = new string[3][];
+    private string[] Question = new string[36];
+    private string[] Answer = new string[36];
 
     void Start()
     {
         // connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
         connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
          Randomize();
-        Debug.Log("Попістафалі");
-
         SelectTheme(ListTheme.ThemesGame[0]);
         ListTheme1 = ListThemes;
         SelectTheme(ListTheme.ThemesGame[1]);
         ListTheme2 = ListThemes;
         SelectTheme(ListTheme.ThemesGame[2]);
         ListTheme3 = ListThemes;
-        foreach (QSA d in ListTheme1) {
 
-        }
+        PushTable(ListTheme1, 0);
+        PushTable(ListTheme2, 1);
+        PushTable(ListTheme3, 2);
+
     }
 
     void Color(int count, int color)
@@ -105,10 +108,26 @@ public class Random_Script : MonoBehaviour
 		}
     }
 
-	void PushTable()
+	void PushTable(List<QSA> List,int a)
 	{
+        int i = 0, count = 0;
+        while (count < 10) {
 
-	}
+            foreach (QSA d in List)
+            {
+
+                if (mas2[i] == a)
+                {
+                    Question[i] = d.Question;
+                    Answer[i] = d.Answer;
+                    count++;
+                }
+                i++;
+                if (i > 35) { break; }
+            }
+        }
+
+    }
 
     private void SelectTheme(string name)
     {
@@ -159,10 +178,9 @@ public class Random_Script : MonoBehaviour
             yield return new WaitForSeconds(1);
 
             time -= 1;
-            Debug.Log(time);
             if (time < 0) {
                 panelQA.SetActive(true);
-
+                
             }
         }
 
@@ -177,26 +195,45 @@ public class Random_Script : MonoBehaviour
         panelQA.SetActive(false);
     }
 
+    public void BtViewAnswer()
+    {
+        if (numberBT < 0)
+        {
+            textViewAnswer.text = "";
+        }
+        else
+        {
+            textViewAnswer.text = Answer[numberBT];
+        }
+    }
+
+
     public void ClickBtQA(Text f)
     {
-        Debug.Log(f.GetComponent<Text>().text);
+        textViewAnswer.text = "";
         if (mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite == button_skins[4]) {
             if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 0) {
                 mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[0];
+                panelQA.GetComponent<Image>().sprite = button_skins[0];
             }
             if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 1)
             {
                 mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[1];
+                panelQA.GetComponent<Image>().sprite = button_skins[1];
             }
             if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 2)
             {
                 mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[2];
+                panelQA.GetComponent<Image>().sprite = button_skins[2];
             }
             if (mas2[Convert.ToInt32(f.GetComponent<Text>().text) - 1] == 3)
             {
                 mas[Convert.ToInt32(f.GetComponent<Text>().text) - 1].GetComponent<Image>().sprite = button_skins[3];
+                panelQA.GetComponent<Image>().sprite = button_skins[3];
             }
             StartCoroutine(countpred(1));
+            panelQAtext.text = Question[Convert.ToInt32(f.GetComponent<Text>().text) - 1];
+            numberBT = Convert.ToInt32(f.GetComponent<Text>().text) - 1;
         }
     }
 }
