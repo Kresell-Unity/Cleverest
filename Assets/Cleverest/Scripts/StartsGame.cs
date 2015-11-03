@@ -17,9 +17,11 @@ public class StartsGame : MonoBehaviour
     public GUIText timer;
     public static bool st = false;
     public GameObject BTPAUSE;
+    public GameObject panelPlayers;
 
     void Start()
     {
+        panelPlayers.SetActive(false);
         BTPAUSE.SetActive(false);
         StartCoroutine(countdown());
     }
@@ -33,7 +35,7 @@ public class StartsGame : MonoBehaviour
             timer.text = time.ToString();
 
             time -= 1;
-            if (time < 0) { timer.text = "Start"; BTPAUSE.SetActive(true); }
+            if (time < 0) { timer.text = "Start"; BTPAUSE.SetActive(true); panelPlayers.SetActive(true); }
         }
 
         st = true;

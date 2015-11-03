@@ -47,6 +47,7 @@ public class ListView : MonoBehaviour
     public GameObject[] Userslabel;
     public static string[] PleyersGame = new string[3];
     private int param = 0;
+    public GameObject startBt;
 
     // Use this for initialization
     void Start()
@@ -87,6 +88,7 @@ public class ListView : MonoBehaviour
             dialog.SetActive(true);
         }
         else { dialog.SetActive(false); }
+
     }
 
     public void ClickOK() {

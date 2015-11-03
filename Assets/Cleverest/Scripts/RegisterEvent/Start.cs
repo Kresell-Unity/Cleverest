@@ -9,15 +9,29 @@
 //------------------------------------------------------------------------------
 using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 
 public class Start : MonoBehaviour {
 
-	
-	public void StartClicked()
+    public GameObject btGo;
+
+    public GameObject[] ElementTheme = new GameObject[4];
+    public GameObject[] ElementUser = new GameObject[3];
+
+    public void StartClicked()
 	{ 
 			Application.LoadLevel (2);
-		}
+        btGo.SetActive(false);
+    }
+
+    void Update() {
+
+        if (ElementTheme[0].GetComponent<Text>().text != "Theme" && ElementUser[0].GetComponent<Text>().text != "User" 
+            &&ElementTheme[1].GetComponent<Text>().text != "Theme" &&ElementUser[1].GetComponent<Text>().text != "User" 
+            && ElementTheme[2].GetComponent<Text>().text != "Theme" && ElementUser[2].GetComponent<Text>().text != "User"
+            && ElementTheme[3].GetComponent<Text>().text != "Theme")
+        { btGo.SetActive(true); }  else { btGo.SetActive(false); }
+    }
 		
 	}	
 

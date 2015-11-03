@@ -30,9 +30,10 @@ public class ListTheme : MonoBehaviour
     public GameObject themeDialog;
     public GameObject dialogname;
     private string connectionString;
+    public GameObject startBt;
 
     public GameObject[] Themeslabel;
-    public static string[] ThemesGame = new string[3];
+    public static string[] ThemesGame = new string[4];
     private int paramt = 0;
 
     // Use this for initialization
@@ -40,7 +41,7 @@ public class ListTheme : MonoBehaviour
     {
        // connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
 		connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
-
+        startBt.SetActive(false);
         ShowThemes();
     }
 
@@ -60,7 +61,11 @@ public class ListTheme : MonoBehaviour
         ThemePanel.SetActive(!ThemePanel.activeSelf);
     }
 
-
+    public void ClickTheme4()
+    {
+        paramt = 3;
+        ThemePanel.SetActive(!ThemePanel.activeSelf);
+    }
 
 
     void Update()
@@ -70,7 +75,7 @@ public class ListTheme : MonoBehaviour
             dialogname.GetComponent<Text>().text = "Add " + ThemeScript.name + "?";
             themeDialog.SetActive(true);
         }
-        else { themeDialog.SetActive(false); }
+        else { themeDialog.SetActive(false); }    
     }
 
     public void ClickOK()
