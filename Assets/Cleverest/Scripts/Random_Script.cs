@@ -34,7 +34,6 @@ public class Random_Script : MonoBehaviour
     private int[] mas2 = new int[36];
     public Sprite[] button_skins = new Sprite[5];
     private string connectionString;
-    private List<QSA> ListThemes = new List<QSA>();
     private List<QSA> ListTheme1 = new List<QSA>();
     private List<QSA> ListTheme2 = new List<QSA>();
     private List<QSA> ListTheme3 = new List<QSA>();
@@ -66,23 +65,18 @@ public class Random_Script : MonoBehaviour
     void Start()
     {
         // connectionString = "URI=file:" + "E:/Gir_project/Cleverest/Assets/Cleverest/db/cleverest.sqlite";
-        connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
+        //connectionString = "URI=file:" + Application.dataPath + "/Cleverest/db/cleverest.sqlite";
+		connectionString = "URI=file:"  +"D:/Cleverest/cleverest.sqlite";
          Randomize();
-        //for (int i=0;i<3;i++) {
-        //    Players[i].GetComponent<Text>().text = ListView.PleyersGame[i] + " " + Pl[i];
-        //}
-        SelectTheme(ListTheme.ThemesGame[0]);
-        ListTheme1 = ListThemes;
-        SelectTheme(ListTheme.ThemesGame[1]);
-        ListTheme2 = ListThemes;
-        SelectTheme(ListTheme.ThemesGame[2]);
-        ListTheme3 = ListThemes;
-        SelectTheme(ListTheme.ThemesGame[3]);
-        ListTheme4 = ListThemes;
+ 
+        SelectTheme(ListTheme.ThemesGame[0], ListTheme1);
+        SelectTheme(ListTheme.ThemesGame[1], ListTheme2);
+        SelectTheme(ListTheme.ThemesGame[2], ListTheme3);
+        SelectTheme(ListTheme.ThemesGame[3],ListTheme4);
 
         PushTable(ListTheme1, 0);
-        PushTable(ListTheme2, 1);
-        PushTable(ListTheme3, 2);
+        PushTable(ListTheme2, 2);
+        PushTable(ListTheme3, 1);
         PushTable(ListTheme4, 3);
 
         paneGameOver.SetActive(false); 
@@ -131,6 +125,8 @@ public class Random_Script : MonoBehaviour
 		}
     }
 
+
+
 	void PushTable(List<QSA> List,int a)
 	{
         int i = 0, count = 0;
@@ -174,9 +170,9 @@ public class Random_Script : MonoBehaviour
 
     }
 
-    private void SelectTheme(string name)
+    private void SelectTheme(string name, List<QSA> L)
     {
-        ListThemes.Clear();
+        L.Clear();
         using (IDbConnection dbConnection = new SqliteConnection(connectionString))
         {
             dbConnection.Open();
@@ -190,7 +186,7 @@ public class Random_Script : MonoBehaviour
                 {
                     while (reader.Read())
                     {
-                        ListThemes.Add(new QSA(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
+                        L.Add(new QSA(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
 
                     }
                     reader.Close();
@@ -236,20 +232,32 @@ public class Random_Script : MonoBehaviour
     }
 
     public void BtNO() {
-        panelQA.SetActive(false);
-        score = 0;
-        if (countGameOver == 36) { paneGameOver.SetActive(true);
-            for (int i = 0; i < 3; i++)
-            {
-                PlayersGM[i].GetComponent<Text>().text = ListView.PleyersGame[i] + " " + Pl[i];
-            }
-        }
-    }
-
-    public void BtYES()
-    {
-        panelQA.SetActive(false);
-        if (turn == 1) { Pl[0] += score; }
+		panelQA.SetActive (false);
+		score = 0;
+		if (countGameOver == 36) {
+			paneGameOver.SetActive (true);
+			for (int i = 0; i < 3; i++) {
+				PlayersGM [i].GetComponent<Text> ().text = ListView.PleyersGame [i] + " " + Pl [i];
+			}
+			using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
+				dbConnection.Open ();
+				
+				using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
+				string sqlQuery1 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [0], ListView.PleyersGame [0]);
+				dbCmd.CommandText = sqlQuery1;
+				string sqlQuery2 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [1], ListView.PleyersGame [1]);
+				dbCmd.CommandText = sqlQuery2;
+				string sqlQuery3 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [2], ListView.PleyersGame [2]);
+				dbCmd.CommandText = sqlQuery3;
+				}
+			}
+		}
+	}
+		
+		public void BtYES()
+		{
+			panelQA.SetActive(false);
+			if (turn == 1) { Pl[0] += score; }
         if (turn == 2) { Pl[1] += score; }
         if (turn == 3) { Pl[2] += score; }
         score = 0;
@@ -258,6 +266,18 @@ public class Random_Script : MonoBehaviour
             {
                 PlayersGM[i].GetComponent<Text>().text = ListView.PleyersGame[i] + " " + Pl[i];
             }
+			using (IDbConnection dbConnection = new SqliteConnection(connectionString)) {
+				dbConnection.Open ();
+				
+				using (IDbCommand dbCmd = dbConnection.CreateCommand()) {
+					string sqlQuery1 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [0], ListView.PleyersGame [0]);
+					dbCmd.CommandText = sqlQuery1;
+					string sqlQuery2 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [1], ListView.PleyersGame [1]);
+					dbCmd.CommandText = sqlQuery2;
+					string sqlQuery3 = string.Format ("UPDATE Players set Score=\'{0}\'  where Name_Player =\'{1}\'", Pl [2], ListView.PleyersGame [2]);
+					dbCmd.CommandText = sqlQuery3;
+				}
+			} 
         }
     }
 

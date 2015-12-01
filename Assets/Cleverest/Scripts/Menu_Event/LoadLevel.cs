@@ -39,7 +39,7 @@ public class LoadLevel : MonoBehaviour {
 		if (changeMusicOnStart) 
 		{
 			playMusic.FadeDown(fadeColorAnimationClip.length);
-		}
+		} 
 		
 		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
 		if (changeScenes) 
